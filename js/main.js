@@ -145,4 +145,11 @@
 		skillsWayPoint();
 	});
 
+	// next button
+	$(".next-div").click(function(event){
+		event.preventDefault();
+		$('html, body').animate({scrollTop: $("#portfolio-about").offset().top}, 800);
+	
+	});
+
 }());
