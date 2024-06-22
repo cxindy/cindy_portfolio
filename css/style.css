@@ -38,20 +38,6 @@
   --gototop-color: #f5f5f5b6;
 }
 
-/* [data-theme="dark"] {
-  --primary-color: #b48798;
-  --secondary-color: #7289aa;
-  --background-color: #181818;
-  --font-color: #f5f5f5;
-  --header-color: #f5f5f5;
-  --title-font-color: #f5f5f5;
-  --cover-hue-color: #1b0c30ad; 
-  --timeline-title-color: #b48798;
-  --timeline-font-color: #f5f5f5;
-  --link-color: #181818;
-  --gototop-color: #f5f5f5b6;
-} */
-
 /* --------------------------------- */
 body {
   font-family: "Space Mono", Arial, serif;
