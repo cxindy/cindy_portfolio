@@ -6,7 +6,7 @@
 	<title>Cindy S.</title>
 	<link rel="icon" type="image/x-icon" href="/images/favicon.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-     
+
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Pacifico" rel="stylesheet">
@@ -360,19 +360,94 @@
 	
 	<!-- Misc. -->
 	<div id="portfolio-started" class="portfolio-bg-dark">
-		<!-- <div class="overlay"></div> -->
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center portfolio-heading">
 					<h2>coming soon.</h2>
 					<p>Something new is currently brewing, stay tuned!</p>
-					<!-- <p><a href="#" class="btn btn-default btn-lg">Contact Me</a></p> -->
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<!-- PROJECT LIST -->
+	<!-- <div id="portfolio-work" class="portfolio-bg-dark">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center portfolio-heading">
+					<h2>Projects</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="https://github.com/cxindy/3D-Sphere-ThreeJS" target="_blank" class="work" style="background-image: url(images/portfolio/3DSphere.gif);">
+						<div class="desc">
+							<h3>Sphere</h3>
+							<span>Three.JS</span>
+							<span><i class="devicon-github-original"></i></span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="https://github.com/cxindy/random-quote-generator" target="_blank" class="work" style="background-image: url(images/portfolio/quoteGenerator.gif);">
+						<div class="desc">
+							<h3>Quote Generator</h3>
+							<span>HTML/CSS/JavaScript</span>
+							<span><i class="devicon-github-original"></i></span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="#" class="work" style="background-image: url(images/portfolio-3.jpg);">
+						<div class="desc">
+							<h3>Project Name</h3>
+							<span>Illustration</span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="#" class="work" style="background-image: url(images/portfolio-4.jpg);">
+						<div class="desc">
+							<h3>Project Name</h3>
+							<span>Design</span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="#" class="work" style="background-image: url(images/portfolio-5.jpg);">
+						<div class="desc">
+							<h3>Project Name</h3>
+							<span>Website</span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="#" class="work" style="background-image: url(images/portfolio-6.jpg);">
+						<div class="desc">
+							<h3>Project Name</h3>
+							<span>Illustration</span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="#" class="work" style="background-image: url(images/portfolio-7.jpg);">
+						<div class="desc">
+							<h3>Project Name</h3>
+							<span>Brading</span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="#" class="work" style="background-image: url(images/portfolio-8.jpg);">
+						<div class="desc">
+							<h3>Project Name</h3>
+							<span>Illustration</span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div> -->
 
 	<!-- CONTACT ME -->
 	<!-- <div id="portfolio-consult">
@@ -415,29 +490,32 @@
 				<div class="form-group">
 					<input type="submit" value="Send Message" class="btn btn-primary">
 				</div>
-
 			</form>	
 		</div>
-	</div>
 	</div> -->
 	
+	<!-- FOOTER -->
 	<div id="portfolio-footer">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
 					<p>&copy; 2024 Cindy Swinfield. All Rights Reserved. <br>Created with ❤ by <a href="https://www.cindyswinfield.com" target="_blank">Cindy Swinfield</a></p>
-					<p>CSS Animation by <a href="https://codingartistweb.com/2021/12/css-animation-tutorial-css-speed-coding/" target="_blank">Coding Artist </a> 
-						 | Work illustrations by <a href="https://storyset.com/work" target="_blank">Storyset</a>
+					<p>CSS Animation by <a href="https://codingartistweb.com/2021/12/css-animation-tutorial-css-speed-coding/" target="_blank">Coding Artist </a> Work illustrations by <a href="https://storyset.com/work" target="_blank">Storyset</a>
 					</p>
 				</div>
 			</div>
 		</div>
 	</div>
-
+    
+	<!-- GO TO TOP // DARK MODE BUTTON -->
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
+		<button class="theme-switch" onclick="toggleDarkMode()">
+			<a id="light-icon"><i  width="50" height="50" class="icon-sun"></i></a>
+			<a id="dark-icon"><i  width="50" height="50" class="icon-moon2"></i></a>
+		</button>
 	</div>
-	
+
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -453,7 +531,7 @@
 	
 	<!-- Main -->
 	<script src="js/main.js"></script>	
-	<script> src="js/text-animation.js"</script>
+	<script src="js/darkmode.js"></script>
 	</body>
 </html>
 
