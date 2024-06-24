@@ -1,3 +1,11 @@
+:root {
+    --border-font-color: #ebebeb;
+}
+
+.dark-mode {
+    --border-font-color: #ebebeb;
+}
+
 .arrow-scroll-icon {
     margin-right: auto;
     margin-left: auto;
@@ -5,7 +13,7 @@
 
     width: 30px;
     height: 30px;
-    border: 2px solid #f7f7f7;
+    border: 2px solid var(--border-font-color);
     border-radius: 50%;
     position: relative;
     animation: down 1.5s infinite;
@@ -17,8 +25,8 @@
         left: 8px;
         width: 10px;
         height: 10px;
-        border-left: 2px solid #f7f7f7;
-        border-bottom: 2px solid #f7f7f7;
+        border-left: 2px solid var(--border-font-color);
+        border-bottom: 2px solid var(--border-font-color);
         transform: rotate(-45deg);
     }
 }

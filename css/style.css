@@ -11,6 +11,36 @@
 /* Variables */
 
 :root {
+  --primary-color: #ee5d6c;
+  --secondary-color: #ff9924;
+  --optional-color: #a475fa;
+  --background-color: #F9F9F9;
+  --font-color: #1b1b1b;
+  --header-color: #111111;
+  --title-font-color: #ebebebf3;
+  --cover-hue-color: #e0e0e042;
+  --timeline-title-color: #1b1b1b;
+  --timeline-font-color: #969696;
+  --link-color: #fafafa;
+  --gototop-color: #000000b6;
+}
+
+.dark-mode {
+  --primary-color: #4c8afc ;
+  --secondary-color: #a464ee;
+  --optional-color: #00d8bb;
+  --background-color: #181818;
+  --font-color: #e6e6e6;
+  --header-color: #f3f3f3;
+  --title-font-color: #ebebebf3;
+  --cover-hue-color: #14002b6e; 
+  --timeline-title-color: #F9F9F9;
+  --timeline-font-color: #F9F9F9;
+  --link-color: #111111;
+  --gototop-color: #f5f5f5b6;
+}
+
+/* :root {
   --primary-color: #E3D0DD;
   --secondary-color: #90C5E0;
   --background-color: #fafafa;
@@ -22,9 +52,9 @@
   --timeline-font-color: #bfbfbf;
   --link-color: #fafafa;
   --gototop-color: #000000b6;
-}
+} */
 
-.dark-mode {
+/* .dark-mode {
   --primary-color: #b48798;
   --secondary-color: #7289aa;
   --background-color: #181818;
@@ -36,16 +66,20 @@
   --timeline-font-color: #f5f5f5;
   --link-color: #181818;
   --gototop-color: #f5f5f5b6;
-}
+} */
 
 /* --------------------------------- */
 body {
-  font-family: "Space Mono", Arial, serif;
-  font-weight: 400;
-  font-size: 16px;
+  font-family:"Quicksand", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
   line-height: 1.7;
   color: var(--font-color);
   background: var(--background-color);
+}
+
+canvas {
+  z-index: -999;
 }
 
 #page {
@@ -93,8 +127,8 @@ p {
 
 h1, h2, h3, h4, h5, h6, figure {
   color: var(--header-color);
-  font-family: "Space Mono", Arial, serif;
-  font-weight: 400;
+  font-family:"Quicksand", sans-serif;
+  font-weight: 900;
   margin: 0 0 20px 0;
 }
 
@@ -112,13 +146,31 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #portfolio-header,
 .portfolio-cover {
-  background-color: transparent;
-  background-size: cover;
-  background-attachment: fixed;
   position: relative;
   height: 600px;
   width: 100%;
+  background: linear-gradient(-45deg, var(--secondary-color), var(--optional-color));
+	background-size: 200% 200%;
+	animation: gradient 2s ease infinite;
 }
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+#particles-js {
+  width: 100%;
+  height: 100%;
+  background: #111111;
+}
+
 #portfolio-header .overlay,
 .portfolio-cover .overlay {
   position: absolute;
@@ -146,20 +198,26 @@ h1, h2, h3, h4, h5, h6, figure {
   margin: 0;
   padding: 0;
   color: var(--title-font-color);
+
 }
 #portfolio-header .display-tc h1,
 .portfolio-cover .display-tc h1 {
   font-family: "Pacifico", cursive;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   font-size: 70px;
   line-height: 1.3;
   font-weight: 300;
+  height: 110px;
+  text-shadow: 4px 4px var(--title-font-color);
+  background: linear-gradient(to left, var(--secondary-color), var(--primary-color), var(--optional-color));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  
 }
 
 @media screen and (max-width: 768px) {
   #portfolio-header .display-tc h1,
   .portfolio-cover .display-tc h1 {
-    font-size: 34px;
+    font-size: 40px;
   }
   #portfolio-header .display-tc h1 span:before,
   .portfolio-cover .display-tc h1 span:before {
@@ -172,7 +230,7 @@ h1, h2, h3, h4, h5, h6, figure {
   .portfolio-cover .display-tc h1 span:after {
     top: 28px;
     width: 20px;
-    height: 3px;
+    padding: 0;
     margin-right: -15px;
   }
 }
@@ -206,6 +264,7 @@ h1, h2, h3, h4, h5, h6, figure {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
+
 }
 #portfolio-header .display-tc .portfolio-social-icons li a,
 .portfolio-cover .display-tc .portfolio-social-icons li a {
@@ -245,9 +304,21 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .portfolio-bg-dark {
-  background: var(--secondary-color);
-  background: var(--primary-color);
+  /* background: var(--secondary-color); */
+  background: linear-gradient(to left, var(--secondary-color), var(--primary-color), var(--optional-color));
+  animation: gradientAnimation 2s linear infinite;
+  animation-direction: alternate;
+  background-size: 300% 100%;
 }
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0;
+  }
+  to {
+    background-position: 100%;
+  }
+}
+
 
 .portfolio-bg-dark h2 {
   color: var(--title-font-color)
@@ -280,7 +351,7 @@ h1, h2, h3, h4, h5, h6, figure {
   padding-right: 10px;
 }
 .portfolio-social-icons li a:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 .portfolio-social-icons li a i {
   font-size: 20px;
@@ -304,12 +375,13 @@ h1, h2, h3, h4, h5, h6, figure {
   zoom: 1;
   display: inline;
   color: var(--link-color);
-  background: var(--secondary-color);
+  background: linear-gradient(var(--primary-color), var(--secondary-color));
   padding: 10px 10px 2px 10px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   -ms-border-radius: 2px;
   border-radius: 2px;
+  transition: transform 0.3s;
 }
 #portfolio-about .portfolio-social-icons li a i {
   font-size: 20px;
@@ -319,19 +391,19 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .portfolio-heading {
-  margin-bottom: 5em;
+  margin-bottom: 2.5em;
 }
 .portfolio-heading.portfolio-heading-sm {
   margin-bottom: 2em;
 }
 .portfolio-heading h2 {
   font-size: 40px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   line-height: 1.5;
   color: var(--header-color);
 }
 .portfolio-heading p {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
   color: var(--timeline-font-color);
 }
@@ -354,7 +426,7 @@ h1, h2, h3, h4, h5, h6, figure {
   position: absolute;
   content: " ";
   width: 2px;
-  background-color: var(--timeline-title-color);
+  background: linear-gradient(to right, var(--secondary-color), var(--primary-color), var(--optional-color));
   left: 50%;
   margin-left: 0px;
 }
@@ -376,11 +448,12 @@ h1, h2, h3, h4, h5, h6, figure {
 .timeline .timeline-heading > div h3 {
   display: inline-block;
   padding: 7px 15px;
-  font-size: 18px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 5px;
   font-weight: bold;
-  background: var(--timeline-title-color);
+  color: var(--link-color);
+  background: linear-gradient(to right, var(--secondary-color), var(--primary-color), var(--optional-color));
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -445,7 +518,7 @@ h1, h2, h3, h4, h5, h6, figure {
   top: 40px;
   left: 50%;
   margin-left: -21px;
-  background-color: var(--primary-color);
+  background: linear-gradient(to right, var(--secondary-color), var(--primary-color), var(--optional-color));
   z-index: 100;
   display: table;
   -webkit-border-radius: 50%;
@@ -495,19 +568,23 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .timeline-title {
   margin-top: 0;
+  font-weight: bolder;
+  font-size: 25px;
+  background: linear-gradient(to left, var(--secondary-color), var(--primary-color), var(--optional-color));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
 }
 
 .company {
   display: block;
   margin-bottom: 20px;
-  font-size: 16px;
-  font-weight: normal;
+  font-size: 18px;
   color: var(--timeline-font-color);
 }
 
 .timeline-body > p,
 .timeline-body > ul {
   margin-bottom: 0;
+  font-size: 16px;
 }
 
 .timeline-body > p + p {
@@ -549,38 +626,6 @@ h1, h2, h3, h4, h5, h6, figure {
     right: auto;
   }
 }
-.progress-wrap {
-  width: 100%;
-  float: left;
-  margin-bottom: 10px;
-}
-.progress-wrap h3 {
-  font-size: 16px;
-  display: block;
-  margin-bottom: 10px;
-  float: left;
-  width: 100%;
-}
-.progress-wrap h3 .name-left {
-  float: left;
-}
-.progress-wrap h3 .value-right {
-  float: right;
-}
-
-.progress {
-  width: 100%;
-  float: left;
-  height: 5px;
-  box-shadow: none;
-}
-
-.progress-bar {
-  background-color: var(--secondary-color);
-  height: 5px;
-  display: block;
-  box-shadow: none;
-}
 
 .totalSkillContainer {
   margin-bottom: 5%;
@@ -602,7 +647,8 @@ h1, h2, h3, h4, h5, h6, figure {
 .skillIcon span i {
   display: block;
   font-size: 400%;
-  color: var(--primary-color);
+  background: linear-gradient(var(--secondary-color), var(--primary-color), var(--optional-color));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
   text-align: center;
   transition: 0.3s;
 }
@@ -804,7 +850,8 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 50px 0;
   float: left;
   
-  width: 100%;background-color: var(--primary-color);
+  width: 100%;
+  background: linear-gradient(to right, var(--secondary-color), var(--primary-color), var(--optional-color));
 }
 #portfolio-footer p:last-child {
   margin-bottom: 0;
@@ -889,7 +936,7 @@ input[type="text"] {
 .btn {
   margin-right: 4px;
   margin-bottom: 4px;
-  font-family: "Space Mono", Arial, serif;
+  font-family:"Quicksand", sans-serif;
   font-size: 16px;
   font-weight: 400;
   -webkit-border-radius: 30px;
@@ -973,7 +1020,7 @@ input[type="text"] {
 .form-control {
   box-shadow: none;
   background: transparent;
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--cover-hue-color);
   color: var(--font-color);
   height: 54px;
   font-size: 18px;
@@ -1039,7 +1086,7 @@ button:hover {
 }
 
 /* Dark Mode toggle */
-.theme-switch {
+.theme-switch-goto {
   all: unset;
   cursor: pointer;
   position: fixed; 
@@ -1047,7 +1094,7 @@ button:hover {
 
 }
 
-.theme-switch:hover {
+.theme-switch-goto:hover {
   box-shadow: none;
   background: none;
   color: none;
