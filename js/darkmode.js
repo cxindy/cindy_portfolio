@@ -8,8 +8,8 @@ const catCloud = document.getElementById("cloud");
 const catMoon = document.getElementById("moon");
 const catStars = document.getElementById("star");
 
-// const contact_light = document.getElementById("svg-light");
-// const contact_dark = document.getElementById("svg-dark");
+const contact_light = document.getElementById("svg-light");
+const contact_dark = document.getElementById("svg-dark");
 
 // Check if dark mode is preferred
 const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
@@ -22,13 +22,13 @@ if (darkMode) {
   darkIcon_gototop.setAttribute("style","display:none;");
   catSun.setAttribute("style","display:none;");
   catCloud.setAttribute("style","display:none;");
-  // contact_light.setAttribute("style","display:none;");
+  contact_light.setAttribute("style","display:none;");
 } else {
   lightIcon.setAttribute("style","display:none;");
   lightIcon_gototop.setAttribute("style","display:none;");
   catMoon.setAttribute("style","display:none;");
   catStars.setAttribute("style","display:none;")
-  // contact_dark.setAttribute("style","display:none;");
+  contact_dark.setAttribute("style","display:none;");
 }
 
 // Toggle dark mode on button click
@@ -54,8 +54,8 @@ function toggleDarkMode() {
       catCloud.setAttribute("style","display:none;");
       
       // Contact Illustration
-      // contact_dark.setAttribute("style","display:;");
-      // contact_light.setAttribute("style","display:none;");
+      contact_dark.setAttribute("style","display:;");
+      contact_light.setAttribute("style","display:none;");
     } else {
       // In Light mode, show moon icon and hide sun icon
       lightIcon.setAttribute("style","display:none;");
@@ -70,7 +70,7 @@ function toggleDarkMode() {
       catStars.setAttribute("style","display:none;")
       
       // Contact Illustration
-      // contact_dark.setAttribute("style","display:none;");
-      // contact_light.setAttribute("style","display:;");
+      contact_dark.setAttribute("style","display:none;");
+      contact_light.setAttribute("style","display:;");
     }
   }
