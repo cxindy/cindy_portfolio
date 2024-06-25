@@ -196,7 +196,7 @@ FRONT PAGE
 }
 #portfolio-header .display-tc h1,
 .portfolio-cover .display-tc h1 {
-  font-family: "Coiny", system-ui;
+  font-family: "Coiny";
   margin-bottom: 5px;
   font-size: 70px;
   line-height: 1.3;
