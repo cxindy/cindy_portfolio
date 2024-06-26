@@ -100,7 +100,7 @@
 			}
 
 		});
-	
+
 	};
 
 	var pieChart = function() {
