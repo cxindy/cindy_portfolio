@@ -1,7 +1,6 @@
 <h1>Personal Website</h1>
 <p>Welcome to my personal website, where I present my professional skills and experience, share my unique story, showcase my expertise, highlight my projects, boost my online presence, and (hoping to) connect with like-minded individuals 😊</p>
-<p>Feel free to give it a visit 🚀
-<a href="www.cindyswinfield.com" >www.cindyswinfield.com</a>
+<p>Feel free to give it a visit 🚀 www.cindyswinfield.com
 </p>
 
 <h2>Technologies Used</h2>
